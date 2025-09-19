@@ -36,6 +36,7 @@ void MainWindow::on_openFileButton_clicked()
         qWarning() << "没有读取到有效数据";
         return;
     }
+    qDebug()<<"size:"<<portData[0].size();
 
     // 使用 SonogramGenerator 生成图像
     QImage sonarImg = generator.createSonogram(portData, starboardData, true);
@@ -65,7 +66,14 @@ void MainWindow::on_bottomTrackButton_clicked()
 
 void MainWindow::on_Imagefusion_clicked()
 {
+    QImage sonarImg = generator.createSonogram(portData, starboardData, true);
+    if (sonarImg.isNull()) {
+        qWarning() << "没有可用图像";
+        return;
+    }
+
     SlantRangeDialog dlg(this);
+    dlg.setData(portData, starboardData, sonarImg);
     dlg.exec();
 }
 

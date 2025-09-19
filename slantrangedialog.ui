@@ -18,19 +18,25 @@
     <number>0</number>
    </property>
    <property name="leftMargin">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
     <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <property name="leftMargin">
+      <number>5</number>
+     </property>
+     <property name="rightMargin">
+      <number>5</number>
+     </property>
      <item>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
@@ -154,9 +160,10 @@
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="slantRangeCorrected">
             <property name="text">
-             <string>PushButton</string>
+             <string>Slant Range 
+ Corrected</string>
             </property>
            </widget>
           </item>
