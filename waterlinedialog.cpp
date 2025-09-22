@@ -28,12 +28,6 @@ WaterlineDialog::~WaterlineDialog()
     delete ui;
 }
 
-// void WaterlineDialog::setImage(const QImage &img)
-// {
-//     originalImage = img;
-//     currentImage = img;
-//     updateView();
-// }
 
 void WaterlineDialog::setData(const QVector<std::vector<uint8_t> > &port, const QVector<std::vector<uint8_t> > &starboard, const QImage &img)
 {
@@ -54,27 +48,6 @@ void WaterlineDialog::updateView()
 
 void WaterlineDialog::fitToWidth(QGraphicsView *view, const QImage &image)
 {
-    // if (image.isNull()) return;
-
-    // scene->clear();
-    // QGraphicsPixmapItem* item = scene->addPixmap(QPixmap::fromImage(image));
-    // view->setScene(scene);
-
-    // qreal viewWidth = view->viewport()->width();
-    // qreal imgWidth  = image.width();
-    // if (imgWidth > 0) {
-    //     qreal scaleFactor = viewWidth / imgWidth;
-
-    //     QTransform transform;
-    //     transform.scale(scaleFactor, scaleFactor);
-    //     view->setTransform(transform);
-    // }
-
-    // view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    // view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-
-    // scene->setSceneRect(item->boundingRect());
-
     if (image.isNull()) return;
 
     if (!imageItem) {

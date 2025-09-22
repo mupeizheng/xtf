@@ -51,7 +51,7 @@ void xtfparse::parseXtfHeader(const QString &filePath, QVector<std::vector<uint8
             XTFPINGHEADER xtfpingHeader{};
             file.seekg(-static_cast<int>(sizeof(XTFCHANHEADER)), std::ios::cur);
             file.read(reinterpret_cast<char*>(&xtfpingHeader), sizeof(XTFPINGHEADER));
-            qDebug()<<"SoundVelocity:"<< xtfpingHeader.SoundVelocity;
+            // qDebug()<<"SoundVelocity:"<< xtfpingHeader.SoundVelocity;
             for (int i = 0; i < header.NumberOfSonarChannels && i < 6; i++) {
                 XTFPINGCHANHEADER xtfpingChanHeader{};
                 file.read(reinterpret_cast<char*>(&xtfpingChanHeader), sizeof(XTFPINGCHANHEADER));
@@ -60,7 +60,7 @@ void xtfparse::parseXtfHeader(const QString &filePath, QVector<std::vector<uint8
                 // qDebug()<<"TimeDuration:"<<xtfpingChanHeader.TimeDuration;
                 // qDebug()<<"SecondsPerPing:"<<xtfpingChanHeader.SecondsPerPing;
 
-                qDebug()<<"NumSamples: "<<xtfpingChanHeader.NumSamples;
+                // qDebug()<<"NumSamples: "<<xtfpingChanHeader.NumSamples;
 
                 //提取并保存每个 ping 的参数
                 PingMeta meta = extractPingMeta(xtfpingHeader, xtfpingChanHeader);

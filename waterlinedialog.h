@@ -18,8 +18,6 @@ public:
     ~WaterlineDialog();
 
     // 设置图像接口
-    // void setImage(const QImage &img);
-
     void setData(const QVector<std::vector<uint8_t>>& port, const QVector<std::vector<uint8_t>>& starboard, const QImage& img);
 
 private:

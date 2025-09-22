@@ -59,7 +59,6 @@ void MainWindow::on_bottomTrackButton_clicked()
     }
 
     WaterlineDialog dlg(this);
-    // dlg.setImage(sonarImg);
     dlg.setData(portData, starboardData, sonarImg);
     dlg.exec();
 }
